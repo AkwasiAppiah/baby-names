@@ -1,7 +1,8 @@
-import { greet } from "./utils/greet";
+import { BabyTileFunction } from "./components/SingleBabyTile";
+import NamesList from '../src/babynames.json'
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (<BabyTileFunction babyNames = {NamesList}/>)
 }
 
 export default App;
