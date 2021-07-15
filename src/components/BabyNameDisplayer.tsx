@@ -4,14 +4,19 @@ import { SingleBabyTile } from "./SingleBabyTile";
 export const BabyNameDisplayer = (): JSX.Element => {
   return (
     <>
-      {nameArr.map(
-        (name) => 
+      <div className="tiles" key="tiles">
+        {nameArr.map((name) =>
           name.sex === "m" ? (
-            <SingleBabyTile key="singleBabyBoy" babyName={name} />
-          ):(
-            <SingleBabyTile key="singleBabyGirl" babyName={name} />
+            <div className="card boy" key = {name.name}>
+              <SingleBabyTile key= 'singleBabyboy' babyName={name} />
+            </div>
+          ) : (
+            <div className="card girl" key = {name.name}>
+              <SingleBabyTile key="singleBabyGirl" babyName={name} />
+            </div>
           )
-      )}
+        )}
+      </div>
     </>
   );
 };
