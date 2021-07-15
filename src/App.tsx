@@ -1,8 +1,6 @@
-import { BabyTileFunction } from "./components/SingleBabyTile";
-import NamesList from '../src/babynames.json'
-
+import { BabyNameDisplayer } from "./components/BabyNameDisplayer";
 function App(): JSX.Element {
-  return (<BabyTileFunction babyNames = {NamesList}/>)
+  return (<BabyNameDisplayer/>)
 }
 
 export default App;

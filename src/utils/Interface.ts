@@ -8,3 +8,8 @@ export interface babyName
 export interface SingleBabyTileProps {
     babyName: babyName 
 }
+
+export interface BabyNameDisplayerProps{
+  babyNames: babyName []
+}
+
