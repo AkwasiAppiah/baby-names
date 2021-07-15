@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 
 .boy {
   background-color: powderblue;
@@ -6,7 +6,6 @@
 
 .girl {
   background-color: pink;
-
 }
 
 .card {
@@ -16,11 +15,11 @@
   width: fit-content;
   border: 5px;
   border-radius: 10%;
-  font-family: 'Delius', cursive;
+  font-family: "Delius", cursive;
 }
 
 .tiles {
-    margin-left : 7.5%;
+  margin-left: 7.5%;
   display: flex;
   flex-wrap: wrap;
 }

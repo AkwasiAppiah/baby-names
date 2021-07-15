@@ -1,15 +1,13 @@
-export interface babyName
-{
-    id: number,
-    name: string,
-    sex: string
-  }
+export interface babyName {
+  id: number;
+  name: string;
+  sex: string;
+}
 
 export interface SingleBabyTileProps {
-    babyName: babyName 
+  babyName: babyName;
 }
 
-export interface BabyNameDisplayerProps{
-  babyNames: babyName []
+export interface BabyNameDisplayerProps {
+  babyNames: babyName[];
 }
-
