@@ -1,6 +1,9 @@
 import { SearchBabyNamesProps } from "../utils/Interface";
 
-export const SearchBabyNames = ({ search, setSearch }: SearchBabyNamesProps): JSX.Element => {
+export const SearchBabyNames = ({
+  search,
+  setSearch,
+}: SearchBabyNamesProps): JSX.Element => {
   return (
     <div className="searchcontainer">
       <input

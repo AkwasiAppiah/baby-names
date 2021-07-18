@@ -35,7 +35,7 @@ export const BabyNameDisplayer = (): JSX.Element => {
         setSearch={setSearch}
         babyNames={filteredNames}
       />
-      
+
       <div className="tiles">
         {favourites.map((name) => (
           <div

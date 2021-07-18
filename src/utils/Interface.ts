@@ -14,12 +14,12 @@ export interface BabyNameDisplayerProps {
 
 export interface SearchBabyNamesProps {
   search: string;
-  setSearch(search:string): void;
-  babyNames: babyName[]
+  setSearch(search: string): void;
+  babyNames: babyName[];
 }
 
-export interface nameFilterProps{
+export interface nameFilterProps {
   search: string;
-  babyName: babyName
-  favourites: babyName [];
+  babyName: babyName;
+  favourites: babyName[];
 }
