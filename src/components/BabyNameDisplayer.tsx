@@ -8,6 +8,7 @@ import { babyName } from "../utils/Interface";
 export const BabyNameDisplayer = (): JSX.Element => {
   const [search, setSearch] = useState("");
   const [favourites, setfavourites] = useState<babyName[]>([]);
+  const [sexFilter, setsexFilter] = useState<string>("");
 
   // PseudoCode
   // create an array of favourite names
@@ -18,7 +19,12 @@ export const BabyNameDisplayer = (): JSX.Element => {
 
   const filteredNames = nameArr
     .filter((singlebaby: babyName) =>
-      nameFilter({ search, babyName: singlebaby, favourites })
+      nameFilter({
+        search: search,
+        babyName: singlebaby,
+        favourites: favourites,
+        sexFilter: sexFilter,
+      })
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -34,6 +40,7 @@ export const BabyNameDisplayer = (): JSX.Element => {
         search={search}
         setSearch={setSearch}
         babyNames={filteredNames}
+        setSexFilter={setsexFilter}
       />
 
       <div className="tiles">

@@ -16,10 +16,12 @@ export interface SearchBabyNamesProps {
   search: string;
   setSearch(search: string): void;
   babyNames: babyName[];
+  setSexFilter(sexFilter: string): void;
 }
 
 export interface nameFilterProps {
   search: string;
   babyName: babyName;
   favourites: babyName[];
+  sexFilter: string;
 }
