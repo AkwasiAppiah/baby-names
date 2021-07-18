@@ -1,14 +1,15 @@
-import { babyName,nameFilterProps } from "./Interface";
+import { nameFilterProps } from "./Interface";
 
-
-export function nameFilter({search,babyNames}:nameFilterProps): babyName [] {
-    return babyNames.filter(
-        (name) => name.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) 
-        // || favouritesArray.toLocaleLowerCase().includes(name.name)
-    )
+export function nameFilter({
+  search,
+  babyName,
+  favourites,
+}: nameFilterProps): boolean {
+  return (
+    babyName.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
+    !favourites.includes(babyName)
+  );
 }
-
-
 
 // import { IEpisode, searchFunctionProps } from "./Interfaces";
 
