@@ -2,7 +2,7 @@ import nameArr from "../babynames.json";
 import { SingleBabyTile } from "./SingleBabyTile";
 import { useState } from "react";
 import { SearchBabyNames } from "./SearchBabyNames";
-import { nameFilter } from "../utils/nameFilter";
+//import { nameFilter } from "../utils/nameFilter";
 import { babyName } from "../utils/Interface";
 
 export const BabyNameDisplayer = (): JSX.Element => {
@@ -18,14 +18,19 @@ export const BabyNameDisplayer = (): JSX.Element => {
   // have apply a filter which filters clicked names
 
   const filteredNames = nameArr
-    .filter((singlebaby: babyName) =>
-      nameFilter({
-        search: search,
-        babyName: singlebaby,
-        favourites: favourites,
-        sexFilter: sexFilter,
-      })
+    .filter(
+      (singlebaby: babyName) => !favourites.includes(singlebaby)
+      // nameFilter({
+      //   search: search,
+      //   babyName: singlebaby,
+      //   favourites: favourites,
+      //   sexFilter: sexFilter,
+      // })
     )
+    .filter((singlebaby: babyName) =>
+      singlebaby.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    )
+    .filter((singleBaby) => singleBaby.sex !== sexFilter || "")
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const handleAddToFavourites = (babyName: babyName) => {
@@ -33,6 +38,10 @@ export const BabyNameDisplayer = (): JSX.Element => {
       setfavourites([...favourites, babyName]);
     }
   };
+
+  console.log(search);
+  console.log(sexFilter);
+  console.log(favourites);
 
   return (
     <>

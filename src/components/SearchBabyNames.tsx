@@ -18,10 +18,10 @@ export const SearchBabyNames = ({
       <button className="All" onClick={() => setSexFilter("")}>
         All
       </button>
-      <button className="Boy" onClick={() => setSexFilter("m")}>
+      <button className="Boy" onClick={() => setSexFilter("f")}>
         Boy
       </button>
-      <button className="Girl" onClick={() => setSexFilter("f")}>
+      <button className="Girl" onClick={() => setSexFilter("m")}>
         Girl
       </button>
     </div>
