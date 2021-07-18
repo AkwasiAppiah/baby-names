@@ -16,13 +16,13 @@ export const SearchBabyNames = ({
       />
 
       <button className="All" onClick={() => setSexFilter("")}>
-        All
+        <i className="fas fa-baby"></i>
       </button>
-      <button className="Boy" onClick={() => setSexFilter("f")}>
-        Boy
+      <button className="boy" onClick={() => setSexFilter("f")}>
+        <i className="fas fa-male"></i>
       </button>
-      <button className="Girl" onClick={() => setSexFilter("m")}>
-        Girl
+      <button className="girl" onClick={() => setSexFilter("m")}>
+        <i className="fas fa-female"></i>
       </button>
     </div>
   );

@@ -53,6 +53,7 @@ export const BabyNameDisplayer = (): JSX.Element => {
       />
 
       <div className="tiles">
+        <div className="tiles text">Favourites:</div>
         {favourites.map((name) => (
           <div
             key={name.name}
@@ -65,6 +66,8 @@ export const BabyNameDisplayer = (): JSX.Element => {
           </div>
         ))}
       </div>
+
+      <hr />
 
       <div className="tiles" key="tiles">
         {filteredNames.map((name) => (
