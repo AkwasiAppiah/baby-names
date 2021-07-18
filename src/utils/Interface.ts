@@ -25,3 +25,7 @@ export interface nameFilterProps {
   favourites: babyName[];
   sexFilter: string;
 }
+
+export interface soundProps {
+  playLion: void;
+}

@@ -4,11 +4,15 @@ import { useState } from "react";
 import { SearchBabyNames } from "./SearchBabyNames";
 //import { nameFilter } from "../utils/nameFilter";
 import { babyName } from "../utils/Interface";
+import useSound from "use-sound";
+// @ts-expect-error : audio issue
+import lionRoar from "../sounds/lionRoar.mp3";
 
 export const BabyNameDisplayer = (): JSX.Element => {
   const [search, setSearch] = useState("");
   const [favourites, setfavourites] = useState<babyName[]>([]);
   const [sexFilter, setsexFilter] = useState<string>("");
+  const [playLion, { stop }] = useSound(lionRoar);
 
   // PseudoCode
   // create an array of favourite names
@@ -58,6 +62,8 @@ export const BabyNameDisplayer = (): JSX.Element => {
           <div
             key={name.name}
             className="card favourites"
+            onMouseEnter={() => playLion()}
+            onMouseLeave={() => stop()}
             onClick={() =>
               setfavourites([...favourites].filter((baby) => baby !== name))
             }
