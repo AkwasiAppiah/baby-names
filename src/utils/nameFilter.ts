@@ -3,7 +3,8 @@ import { babyName,nameFilterProps } from "./Interface";
 
 export function nameFilter({search,babyNames}:nameFilterProps): babyName [] {
     return babyNames.filter(
-        (name) => name.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        (name) => name.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()) 
+        // || favouritesArray.toLocaleLowerCase().includes(name.name)
     )
 }
 

@@ -7,6 +7,7 @@ import { babyName } from "../utils/Interface";
 
 export const BabyNameDisplayer = (): JSX.Element => {
   const [search, setSearch] = useState("");
+  
 
   let searchNames: babyName[] = [];
 
@@ -15,6 +16,14 @@ export const BabyNameDisplayer = (): JSX.Element => {
   );
 
   searchNames = nameFilter({ search, babyNames: sortedNames });
+
+  // PseudoCode
+  // create an array of favourite names 
+  // On click add names to this array
+      // display these names
+  
+  // have apply a filter which filters clicked names
+
 
   return (
     <>
