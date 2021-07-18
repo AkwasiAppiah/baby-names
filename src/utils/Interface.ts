@@ -20,5 +20,6 @@ export interface SearchBabyNamesProps {
 
 export interface nameFilterProps{
   search: string;
-  babyNames: babyName []
+  babyName: babyName
+  favourites: babyName [];
 }

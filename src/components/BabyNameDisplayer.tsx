@@ -7,43 +7,55 @@ import { babyName } from "../utils/Interface";
 
 export const BabyNameDisplayer = (): JSX.Element => {
   const [search, setSearch] = useState("");
-  
-
-  let searchNames: babyName[] = [];
-
-  const sortedNames: babyName[] = nameArr.sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
-
-  searchNames = nameFilter({ search, babyNames: sortedNames });
+  const [favourites, setfavourites] = useState<babyName[]>([]);
 
   // PseudoCode
-  // create an array of favourite names 
+  // create an array of favourite names
   // On click add names to this array
-      // display these names
-  
+  // display these names
+
   // have apply a filter which filters clicked names
 
+  const filteredNames = nameArr
+    .filter((singlebaby: babyName) =>
+      nameFilter({ search, babyName: singlebaby, favourites })
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const handleAddToFavourites = (babyName: babyName) => {
+    if (!favourites.includes(babyName)) {
+      setfavourites([...favourites, babyName]);
+    }
+  };
 
   return (
     <>
       <SearchBabyNames
         search={search}
         setSearch={setSearch}
-        babyNames={searchNames}
+        babyNames={filteredNames}
       />
+      
+      <div className="tiles">
+        {favourites.map((name) => (
+          <div
+            key={name.name}
+            className="card favourites"
+            onClick={() =>
+              setfavourites([...favourites].filter((baby) => baby !== name))
+            }
+          >
+            <SingleBabyTile key={name.id} babyName={name} />
+          </div>
+        ))}
+      </div>
+
       <div className="tiles" key="tiles">
-        {searchNames.map((name) =>
-          name.sex === "m" ? (
-            <div className="card boy" key={name.name}>
-              <SingleBabyTile key="singleBabyboy" babyName={name} />
-            </div>
-          ) : (
-            <div className="card girl" key={name.name}>
-              <SingleBabyTile key="singleBabyGirl" babyName={name} />
-            </div>
-          )
-        )}
+        {filteredNames.map((name) => (
+          <div key={name.id} onClick={() => handleAddToFavourites(name)}>
+            <SingleBabyTile key={name.id} babyName={name} />
+          </div>
+        ))}
       </div>
     </>
   );
