@@ -8,14 +8,16 @@ import useSound from "use-sound";
 // global.ds.ts declare module "*.mp3"
 import lionRoar from "../sounds/lionRoar.mp3";
 import soundurl from "../sounds/glug-a.wav";
+import allChildren from "../sounds/allSounds.wav";
 
 export const BabyNameDisplayer = (): JSX.Element => {
   const [search, setSearch] = useState("");
   const [favourites, setfavourites] = useState<babyName[]>([]);
   const [sexFilter, setsexFilter] = useState<string>("");
-  const [playLion, { stop }] = useSound(lionRoar);
+  const [playLion, { duration }] = useSound(lionRoar);
   const [playbackRate, setPlaybackRate] = useState(0.75);
-  const [playSqueak] = useSound(soundurl, {playbackRate, volume:0.5,})
+  const [playSqueak] = useSound(soundurl, { playbackRate, volume: 0.5 });
+  const [playallChildren, { stop }] = useSound(allChildren);
 
   // PseudoCode
   // create an array of favourite names
@@ -47,10 +49,12 @@ export const BabyNameDisplayer = (): JSX.Element => {
         babyNames={filteredNames}
         setSexFilter={setsexFilter}
         stop={stop}
-        playLion = {playLion}
-        playbackRate = {playbackRate}
-        setPlaybackRate = {setPlaybackRate}
-        playSqueak = {playSqueak}
+        playLion={playLion}
+        duration={duration}
+        playbackRate={playbackRate}
+        setPlaybackRate={setPlaybackRate}
+        playSqueak={playSqueak}
+        playallChildren={playallChildren}
       />
 
       <div className="tiles">

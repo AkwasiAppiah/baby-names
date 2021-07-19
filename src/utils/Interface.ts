@@ -19,13 +19,14 @@ export interface SearchBabyNamesProps {
   setSearch(search: string): void;
   babyNames: babyName[];
   setSexFilter(sexFilter: string): void;
-  stop: (id?: string | undefined) => void
-  playLion: PlayFunction
+  stop: (id?: string | undefined) => void;
+  playLion: PlayFunction;
+  duration: number | null;
   playbackRate: number;
-  setPlaybackRate(playbackRate:number): void;
-  playSqueak: PlayFunction
+  setPlaybackRate(playbackRate: number): void;
+  playSqueak: PlayFunction;
+  playallChildren: PlayFunction;
   // soundProps: soundProps
-
 }
 
 export interface nameFilterProps {
@@ -36,6 +37,6 @@ export interface nameFilterProps {
 }
 
 export interface soundProps {
-  playLion: PlayFunction
-  stop: (id?: string | undefined) => void
+  playLion: PlayFunction;
+  stop: (id?: string | undefined) => void;
 }

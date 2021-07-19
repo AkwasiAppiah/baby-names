@@ -13,7 +13,6 @@ export function nameFilter({
   );
 }
 
-
 // .filter(
 //   (singlebaby: babyName) => !favourites.includes(singlebaby)
 //   // nameFilter({

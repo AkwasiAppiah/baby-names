@@ -1,26 +1,33 @@
 import { SearchBabyNamesProps } from "../utils/Interface";
 
-
-
 export const SearchBabyNames = ({
   search,
   setSearch,
   setSexFilter,
   stop,
   playLion,
+  duration,
   playbackRate,
   setPlaybackRate,
-  playSqueak
+  playSqueak,
+  playallChildren,
 }: SearchBabyNamesProps): JSX.Element => {
-  
-  const handleMaleButton = () =>  {setSexFilter("f"); playLion()}
+  const handleMaleButton = () => {
+    setSexFilter("f");
+    playLion();
+    duration = 0.005;
+  };
 
-  const  handleFemaleButton = () => {
-    setSexFilter("m")
+  const handleFemaleButton = () => {
+    setSexFilter("m");
     setPlaybackRate(playbackRate + 0.1);
     playSqueak();
-  }
-    
+  };
+
+  const handleAllChildrenButton = () => {
+    setSexFilter("");
+    playallChildren();
+  };
 
   return (
     <div className="searchcontainer">
@@ -32,7 +39,7 @@ export const SearchBabyNames = ({
         }}
       />
 
-      <button className="All" onClick={() => setSexFilter("")}>
+      <button className="All" onClick={() => handleAllChildrenButton()}>
         <i className="fas fa-baby"></i>
       </button>
       <button className="boy" onClick={() => handleMaleButton()}>
@@ -41,9 +48,7 @@ export const SearchBabyNames = ({
       <button className="girl" onClick={() => handleFemaleButton()}>
         <i className="fas fa-female"></i>
       </button>
-      <button onClick = {() => stop()}>
-        mute
-      </button>
+      <button onClick={() => stop()}>mute</button>
     </div>
   );
 };
