@@ -17,6 +17,9 @@ export interface SearchBabyNamesProps {
   setSearch(search: string): void;
   babyNames: babyName[];
   setSexFilter(sexFilter: string): void;
+  stop: (id?: string | undefined) => void
+  // soundProps: soundProps
+
 }
 
 export interface nameFilterProps {
@@ -27,5 +30,6 @@ export interface nameFilterProps {
 }
 
 export interface soundProps {
-  playLion: void;
+  // playLion: PlayFunction
+  stop: (id?: string | undefined) => void
 }

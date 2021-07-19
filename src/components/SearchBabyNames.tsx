@@ -4,6 +4,7 @@ export const SearchBabyNames = ({
   search,
   setSearch,
   setSexFilter,
+  stop,
 }: SearchBabyNamesProps): JSX.Element => {
   return (
     <div className="searchcontainer">
@@ -23,6 +24,9 @@ export const SearchBabyNames = ({
       </button>
       <button className="girl" onClick={() => setSexFilter("m")}>
         <i className="fas fa-female"></i>
+      </button>
+      <button onClick = {() => stop()}>
+        mute
       </button>
     </div>
   );
