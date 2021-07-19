@@ -1,3 +1,5 @@
+import { PlayFunction } from "use-sound/dist/types";
+
 export interface babyName {
   id: number;
   name: string;
@@ -18,6 +20,7 @@ export interface SearchBabyNamesProps {
   babyNames: babyName[];
   setSexFilter(sexFilter: string): void;
   stop: (id?: string | undefined) => void
+  playLion: PlayFunction
   // soundProps: soundProps
 
 }
@@ -30,6 +33,6 @@ export interface nameFilterProps {
 }
 
 export interface soundProps {
-  // playLion: PlayFunction
+  playLion: PlayFunction
   stop: (id?: string | undefined) => void
 }

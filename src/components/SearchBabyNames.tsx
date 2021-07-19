@@ -1,11 +1,18 @@
 import { SearchBabyNamesProps } from "../utils/Interface";
 
+
+
 export const SearchBabyNames = ({
   search,
   setSearch,
   setSexFilter,
   stop,
+  playLion
 }: SearchBabyNamesProps): JSX.Element => {
+  
+  const handleMaleButton = () =>  {setSexFilter("f"); playLion()}
+    
+
   return (
     <div className="searchcontainer">
       <input
@@ -19,7 +26,7 @@ export const SearchBabyNames = ({
       <button className="All" onClick={() => setSexFilter("")}>
         <i className="fas fa-baby"></i>
       </button>
-      <button className="boy" onClick={() => setSexFilter("f")}>
+      <button className="boy" onClick={() => handleMaleButton()}>
         <i className="fas fa-male"></i>
       </button>
       <button className="girl" onClick={() => setSexFilter("m")}>

@@ -21,15 +21,14 @@ export const BabyNameDisplayer = (): JSX.Element => {
 
   // have apply a filter which filters clicked names
 
-  const filteredNames = nameArr.filter((singlebaby)=>  
-  nameFilter({
+  const filteredNames = nameArr.filter((singlebaby) =>
+    nameFilter({
       search: search,
       babyName: singlebaby,
       favourites: favourites,
       sexFilter: sexFilter,
-    }))
-
-  
+    })
+  );
 
   const handleAddToFavourites = (babyName: babyName) => {
     if (!favourites.includes(babyName)) {
@@ -44,7 +43,8 @@ export const BabyNameDisplayer = (): JSX.Element => {
         setSearch={setSearch}
         babyNames={filteredNames}
         setSexFilter={setsexFilter}
-        stop = {stop}
+        stop={stop}
+        playLion = {playLion}
       />
 
       <div className="tiles">
@@ -53,8 +53,8 @@ export const BabyNameDisplayer = (): JSX.Element => {
           <div
             key={name.name}
             className="card favourites"
-            onMouseEnter={() => playLion()}
-            onMouseLeave={() => stop()}
+            // onMouseEnter={() => playLion()}
+            // onMouseLeave={() => stop()}
             onClick={() =>
               setfavourites([...favourites].filter((baby) => baby !== name))
             }
