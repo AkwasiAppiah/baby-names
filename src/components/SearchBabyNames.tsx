@@ -7,10 +7,19 @@ export const SearchBabyNames = ({
   setSearch,
   setSexFilter,
   stop,
-  playLion
+  playLion,
+  playbackRate,
+  setPlaybackRate,
+  playSqueak
 }: SearchBabyNamesProps): JSX.Element => {
   
   const handleMaleButton = () =>  {setSexFilter("f"); playLion()}
+
+  const  handleFemaleButton = () => {
+    setSexFilter("m")
+    setPlaybackRate(playbackRate + 0.1);
+    playSqueak();
+  }
     
 
   return (
@@ -29,7 +38,7 @@ export const SearchBabyNames = ({
       <button className="boy" onClick={() => handleMaleButton()}>
         <i className="fas fa-male"></i>
       </button>
-      <button className="girl" onClick={() => setSexFilter("m")}>
+      <button className="girl" onClick={() => handleFemaleButton()}>
         <i className="fas fa-female"></i>
       </button>
       <button onClick = {() => stop()}>

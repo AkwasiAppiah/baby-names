@@ -21,6 +21,9 @@ export interface SearchBabyNamesProps {
   setSexFilter(sexFilter: string): void;
   stop: (id?: string | undefined) => void
   playLion: PlayFunction
+  playbackRate: number;
+  setPlaybackRate(playbackRate:number): void;
+  playSqueak: PlayFunction
   // soundProps: soundProps
 
 }
