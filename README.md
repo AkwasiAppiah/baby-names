@@ -1,3 +1,5 @@
+**App can be previewed on netflify : https://akwasis-baby-names.netlify.app/**
+
 A baby name selector app that I made as part of The Mark from Academy. 
 
 Added some sounds to improve user interaction using the useSound hook. 
